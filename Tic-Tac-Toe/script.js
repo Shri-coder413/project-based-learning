@@ -57,7 +57,7 @@ const enabledPlayGround = () => {
 };
 
 const showWinner = (winner) => {
-  msg.textContent = `Congratualation, winner is ${winner} `;
+  msg.textContent = `Congratualation🎉, Winner is ${winner} `;
   msg.classList.remove("hide");
   disabledPlayGround();
 };
