@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  background-color: #111;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(0, 183, 255);
+  padding: 10px;
+}
+
+.insta-page {
+  width: 100%;
+  max-width: 380px;
+  height: 100%;
+  max-height: 620px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid #000;
+}
+
+.top {
+  height: 120px;
+}
+
+#story-board {
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  overflow-x: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+#story-board::-webkit-scrollbar {
+  display: none;
+}
+
+.story {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  padding: 3px;
+  flex-shrink: 0;
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7) border-box;
+  border: 3px solid transparent;
+}
+
+.story img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.story.viewed {
+  filter: grayscale(1);
+  opacity: 0.7;
+  background: #ccc;
+}
+
+#full-screen {
+  display: none;
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 5;
+}
+
+#full-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.45), transparent);
+}
+
+#full-screen::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0%;
+  background: #804cfa;
+  animation: progress 3s linear forwards;
+}
+
+@keyframes progress {
+  to {
+    width: 100%;
+  }
+}
+
+.story-info {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 10;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.story-info strong {
+  font-size: 18px;
+}
+
+.story-info p {
+  font-size: 16px;
+  opacity: 0.85;
+}
+
+.bottom {
+  height: calc(100% - 120px);
+}
+
+#feed {
+  height: 100%;
+  overflow-y: auto;
+}
+
+#feed::-webkit-scrollbar {
+  display: none;
+}
+
+.feed-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.feed-item img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.feed-actions {
+  padding: 6px;
+  font-size: 18px;
+}
+
+.feed-caption {
+  padding: 6px;
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  .insta-page {
+    max-width: 420px;
+    max-height: 680px;
+  }
+
+  .story {
+    width: 95px;
+    height: 95px;
+  }
+
+  .feed-item img {
+    height: 280px;
+  }
+}
