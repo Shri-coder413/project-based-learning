@@ -1,4 +1,4 @@
-# 📝 My Daily To-Do App
+## 📝 My Daily To-Do App
 
 A simple **To-Do List application** built using **HTML, CSS, and Vanilla JavaScript**.  
 This app helps you organize your daily tasks, mark them as done, and keeps them saved even if you close the browser.
@@ -62,34 +62,18 @@ todo-app/
 ## 📌 How to Use
 
 1. Clone the repository:
-   ```bash
-   git clone <your-repo-url>
-````
+   ```bash  git clone https://github.com/Shri-coder413/project-based-learning/tree/0a7eeec618ec96744ce59d9635430aae3852b8d6/my-ToDo-app  ````
 
 2. Open `index.html` in your browser.
 3. Start adding, completing, and deleting tasks.
 
 ---
 
-## 🔗 Demo
+## 🔗 Demo Link :
+ https://shri-coder413.github.io/project-based-learning/my-ToDo-app/
 
-You can host this app on GitHub Pages or open the `index.html` locally to try it.
-
----
-
-## 💡 Tips for Beginners
-
-* Focus on understanding **DOM manipulation** with `createElement`, `appendChild`, and event listeners.
-* Learn how **localStorage** works for saving data in the browser.
-* Experiment with CSS hover and gradient effects to make UI more appealing.
-
----
-
-## 📸 Screenshot
-
-![My Daily Todos Screenshot](assets/screenshot.png)
+![My Daily Todos Screenshot](./assets/screenshot.png)
 
 ---
 
 Made with ❤️ by  Shrinivas Nakadi
-
