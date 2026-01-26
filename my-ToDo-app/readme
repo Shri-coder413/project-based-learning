@@ -16,20 +16,6 @@ This app helps you organize your daily tasks, mark them as done, and keeps them 
 
 ---
 
-## 📂 Project Structure
-
-```
-
-todo-app/
-│
-├── index.html     # Main HTML page
-├── style.css      # Styling for the app
-└── script.js      # JavaScript logic for adding/removing tasks and saving to localStorage
-
-````
-
----
-
 ## 💻 How It Works
 
 1. **Add Task**  
@@ -63,7 +49,7 @@ todo-app/
 
 1. Clone the repository:
    ```bash
-   git clone <your-repo-url>
+   git clone 
 ````
 
 2. Open `index.html` in your browser.
@@ -73,7 +59,7 @@ todo-app/
 
 ## 🔗 Demo
 
-You can host this app on GitHub Pages or open the `index.html` locally to try it.
+https://shri-coder413.github.io/project-based-learning/my-ToDo-app/
 
 ---
 
