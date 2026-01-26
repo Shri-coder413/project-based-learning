@@ -49,7 +49,7 @@ This app helps you organize your daily tasks, mark them as done, and keeps them 
 
 1. Clone the repository:
    ```bash
-   git clone 
+   git clone https://github.com/Shri-coder413/project-based-learning/tree/main/my-ToDo-app
 ````
 
 2. Open `index.html` in your browser.
@@ -57,9 +57,8 @@ This app helps you organize your daily tasks, mark them as done, and keeps them 
 
 ---
 
-## 🔗 Demo
-
-https://shri-coder413.github.io/project-based-learning/my-ToDo-app/
+## 🔗 Demo 👉 https://shri-coder413.github.io/project-based-learning/my-ToDo-app/
+![My Daily Todos Screenshot](assets/screenshot.png)
 
 ---
 
@@ -68,12 +67,6 @@ https://shri-coder413.github.io/project-based-learning/my-ToDo-app/
 * Focus on understanding **DOM manipulation** with `createElement`, `appendChild`, and event listeners.
 * Learn how **localStorage** works for saving data in the browser.
 * Experiment with CSS hover and gradient effects to make UI more appealing.
-
----
-
-## 📸 Screenshot
-
-![My Daily Todos Screenshot](assets/screenshot.png)
 
 ---
 
