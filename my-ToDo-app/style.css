@@ -1,61 +1,176 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: white;
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
 }
 
-html,
 body {
-  width: 100%;
-  height: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  background-color: #222;
+  color: #fff;
+  padding: 10px;
 }
 
-#box {
-  width: 270px;
-  height: 300px;
-  border: 1px solid grey;
-  border-radius: 10px;
-  background-color: rgba(64, 196, 198, 0.775);
-  padding: 15px;
+.app {
+  width: 100%;
+  max-width: 400px;
+  background: #222;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 1.6rem;
 }
 
 #input-box {
-  margin-bottom: 10px;
-  color: #222;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.btnBox {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.03);
 }
 
 #addBtn {
-  background-color: rgba(87, 241, 21, 0.819);
-  color: #222;
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 5px 5px;
-  border-radius: 5px;
-  margin-bottom: 5px;
+  background: #4ade80;
+  color: #111;
 }
 
 #delete {
-  background-color: coral;
-  color: #222;
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 5px 5px;
-  border-radius: 5px;
-  margin-left: 15px;
+  background: #fb7185;
+  color: #111;
+}
+
+#box {
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+#box::-webkit-scrollbar {
+  width: 8px;
+}
+
+#box::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#box::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+
+#box::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.8);
 }
 
 ul {
   list-style: none;
-  margin-left: 20px;
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  column-gap: 5px;
-  color: white;
+  gap: 8px;
+}
+
+li {
+  background: #333;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.2s;
+}
+
+li:hover {
+  background: #3f3f3f;
+}
+
+li input[type="checkbox"] {
+  accent-color: #4ade80;
+  width: 22px;
+  height: 22px;
+  transform: scale(1.1);
+}
+
+li input:checked + span {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+#selectAll {
+  margin-top: 12px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid white;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #eaeaf0;
+  background: rgba(0, 0, 0, 0.067);
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+#selectAll:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+#selectAll:active {
+  transform: scale(0.97);
+}
+
+
+@media (max-width: 480px) {
+  .app {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  #input-box {
+    font-size: 0.95rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  li {
+    font-size: 0.95rem;
+    padding: 8px;
+  }
 }

@@ -29,7 +29,7 @@
 const state = {
   progress: 0,
   isDownloading: false,
-  duration: 4000, // total download time in ms
+  duration: 4000,
 };
 
 const progressText = document.querySelector("h1");
@@ -53,7 +53,7 @@ function startDownload() {
     const elapsed = currentTime - startTime;
     const percentage = Math.min(
       Math.round((elapsed / state.duration) * 100),
-      100
+      100,
     );
 
     state.progress = percentage;

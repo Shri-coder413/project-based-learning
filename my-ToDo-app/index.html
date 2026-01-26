@@ -2,36 +2,33 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo-list App</title>
-    <link rel="stylesheet" href="style.css">
-    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <h1>To-do List</h1>
+    <div class="app">
+        <h1>My Daily Todos</h1>
+        <input type="text" id="input-box" placeholder="Add a new task..." />
 
-    <input type="text" name="input-box" id="input-box">
-    <div class="btnBox">
-        <button id="addBtn"> Add </button>
-        <button id="delete"> Delete </button>
-    </div>
+        <div class="btnBox">
+            <button id="addBtn">Add</button>
+            <button id="delete">Delete Done</button>
+        </div>
 
-    <div id="box">
-        <ul>
-            <li><input type="checkbox">Wake up at 6AM</li>
-            <li><input type="checkbox">Drink 1-glass water</li>
-            <li><input type="checkbox">Go to 1km running</li>
-            <li><input type="checkbox">2Qs on Arrays</li>
-            <li><input type="checkbox">Break-fast</li>
-            <li><input type="checkbox">2Qs on string</li>
-            <li><input type="checkbox">Do 5-min push-up</li>
-            <li><input type="checkbox">2Qs on Arrays </li>
-            <li><input type="checkbox">Listen music for 5-min</li>
-            <li><input type="checkbox"">Visit code-help web</li>
-            <li><input type="checkbox"">Take small nap for 20-min</li>
-        </ul>
+        <div id="box">
+            <ul>
+                <li><input type="checkbox"><span>Wake up on time</span></li>
+                <li><input type="checkbox"><span>Drink water</span></li>
+                <li><input type="checkbox"><span>Focus on one important task</span></li>
+                <li><input type="checkbox"><span>Practice coding</span></li>
+                <li><input type="checkbox"><span>Drink water</span></li>
+                <li><input type="checkbox"><span>Sleep on time</span></li>
+            </ul>
+        </div>
+        <button id="selectAll">Select All</button>
     </div>
 
     <script src="script.js"></script>

@@ -1,29 +1,47 @@
-let inp = document.querySelector("#input-box");
-let add = document.querySelector("#addBtn");
-let remove = document.querySelector("#delete");
-let list = document.querySelector("ul");
+const inp = document.querySelector("#input-box");
+const add = document.querySelector("#addBtn");
+const remove = document.querySelector("#delete");
+const list = document.querySelector("ul");
 
-// Add task
+let savedTodos = JSON.parse(localStorage.getItem("todos")) || [];
+
+if (!savedTodos || savedTodos.length === 0) {
+  savedTodos = [
+    { text: "Wake up on time", done: false },
+    { text: "Drink water", done: false },
+    { text: "Focus on one important task", done: false },
+    { text: "Practice coding", done: false },
+    { text: "Sleep on time", done: false }
+  ];
+
+  localStorage.setItem("todos", JSON.stringify(savedTodos));
+}
+
+
 add.addEventListener("click", function () {
   let task = inp.value.trim();
 
   if (task !== "") {
     let li = document.createElement("li");
-
-    // create checkbox
     let check = document.createElement("input");
+
     check.type = "checkbox";
+    check.addEventListener("change", saveTodos);
 
-    // add checkbox + text
+    let text = document.createElement("span");
+    text.textContent = task;
+
     li.appendChild(check);
-    li.append(task);
-
+    li.appendChild(text);
     list.appendChild(li);
-    inp.value = ""; // clear input
+
+    inp.value = "";
+
+    saveTodos();
   }
 });
 
-// Remove selected tasks
+
 remove.addEventListener("click", function () {
   let checkboxes = list.querySelectorAll('input[type="checkbox"]');
   checkboxes.forEach((box) => {
@@ -31,4 +49,38 @@ remove.addEventListener("click", function () {
       box.parentElement.remove();
     }
   });
+
+  saveTodos();
 });
+
+
+const selectAll = document.querySelector("#selectAll");
+
+selectAll.addEventListener("click", function () {
+  let checkboxes = list.querySelectorAll('input[type="checkbox"]');
+  let allChecked = true;
+
+  checkboxes.forEach((box) => {
+    if (!box.checked) allChecked = false;
+  });
+
+  checkboxes.forEach((box) => {
+    box.checked = !allChecked;
+  });
+
+  saveTodos();
+});
+
+
+function saveTodos() {
+  let todos = [];
+
+  list.querySelectorAll("li").forEach((li) => {
+    todos.push({
+      text: li.querySelector("span").textContent,
+      done: li.querySelector("input").checked
+    });
+  });
+
+  localStorage.setItem("todos", JSON.stringify(todos));
+}
