@@ -1,79 +1,110 @@
-## 📝 My Daily To-Do App
+# 📝 My Daily To-Do App
 
-A simple **To-Do List application** built using **HTML, CSS, and Vanilla JavaScript**.  
-This app helps you organize your daily tasks, mark them as done, and keeps them saved even if you close the browser.
+![Todo App Banner](./assets/screenshot.png)
+
+A **simple, clean, and responsive To-Do List application** built with **HTML, CSS, and Vanilla JavaScript**.
+Organize your daily tasks, mark them as done, and keep them saved even after closing the browser.
 
 ---
 
-## ✨ Features
+## 🌟 Features
 
-- Add new tasks dynamically
-- Delete completed tasks
-- Select or deselect all tasks at once
-- Tasks are saved in **localStorage** to persist between page reloads
-- Simple and clean **responsive design**
-- Hover effects and minimal animations for better UX
+* ✅ **Add tasks dynamically**
+* ✅ **Delete completed tasks**
+* ✅ **Select/Deselect all tasks at once**
+* ✅ **Persistent storage** with `localStorage`
+* ✅ **Responsive and mobile-first design**
+* ✅ **Smooth hover effects** and subtle animations for better UX
 
 ---
 
 ## 📂 Project Structure
 
 ```
-
 todo-app/
 │
 ├── index.html     # Main HTML page
-├── style.css      # Styling for the app
-└── script.js      # JavaScript logic for adding/removing tasks and saving to localStorage
-
-````
+├── style.css      # Styling and responsive design
+└── script.js      # Task management, event handling, and localStorage
+```
 
 ---
 
 ## 💻 How It Works
 
-1. **Add Task**  
-   - Type a task in the input box and click **Add**.
-   - The task appears in the list below.
+1. **Add Task**
 
-2. **Mark Task as Done**  
-   - Click the checkbox next to a task to mark it as completed.
-   - Completed tasks will have a line-through effect.
+   * Type your task in the input box and click **Add**.
 
-3. **Delete Completed Tasks**  
-   - Click the **Delete Done** button to remove all checked tasks.
+2. **Mark Task as Done**
 
-4. **Select/Deselect All Tasks**  
-   - Click the **Select All** button to check/uncheck all tasks.
+   * Click the checkbox to mark a task as completed. Completed tasks get a **line-through effect**.
 
-5. **Persistent Storage**  
-   - Your tasks are saved in **localStorage** so you don’t lose them when you refresh the page.
+3. **Delete Completed Tasks**
+
+   * Click **Delete Done** to remove all completed tasks.
+
+4. **Select/Deselect All Tasks**
+
+   * Click **Select All** to check/uncheck all tasks at once.
+
+5. **Persistent Storage**
+
+   * Tasks are saved in **localStorage**, so they remain after refreshing the page.
 
 ---
 
 ## 🎨 Technologies Used
 
-- **HTML** – Structure of the app
-- **CSS** – Styling and responsive design
-- **JavaScript** – Task management, event handling, and localStorage
+| Technology | Purpose                                   |
+| ---------- | ----------------------------------------- |
+| HTML       | Structure of the app                      |
+| CSS        | Styling, responsive layout, hover effects |
+| JavaScript | Task management, events, and localStorage |
 
 ---
 
-## 📌 How to Use
+## 🚀 Getting Started
 
-1. Clone the repository:
-   ```bash  git clone https://github.com/Shri-coder413/project-based-learning/tree/0a7eeec618ec96744ce59d9635430aae3852b8d6/my-ToDo-app  ````
+1. **Clone the repository**:
 
-2. Open `index.html` in your browser.
-3. Start adding, completing, and deleting tasks.
+   ```bash
+   git clone https://github.com/Shri-coder413/project-based-learning.git
+   ```
+2. **Navigate to the project folder**:
+
+   ```bash
+   cd project-based-learning/my-ToDo-app
+   ```
+3. **Open `index.html`** in your browser.
+4. Start adding, completing, and deleting tasks!
 
 ---
 
-## 🔗 Demo Link :
- https://shri-coder413.github.io/project-based-learning/my-ToDo-app/
+## 🔗 Demo
+
+[View Live Demo](https://shri-coder413.github.io/project-based-learning/my-ToDo-app/)
+
+---
+
+## 🖼️ Screenshot
 
 ![My Daily Todos Screenshot](./assets/screenshot.png)
 
 ---
 
-Made with ❤️ by  Shrinivas Nakadi
+## 💡 Future Improvements
+
+* Add **priority levels** for tasks
+* Add **dark mode** toggle
+* Enable **task editing**
+* Add **notifications/reminders**
+
+---
+
+## ❤️ Author
+
+**Shrinivas Nakadi** – passionate about **web development** and creating simple yet effective web apps.
+[GitHub](https://github.com/Shri-coder413) | [LinkedIn](https://www.linkedin.com/in/shrinivas-nakadi/)
+
+---
