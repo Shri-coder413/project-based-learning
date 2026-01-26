@@ -9,15 +9,17 @@ html,
 body {
   width: 100%;
   height: 100%;
+  color: #fff;
+  max-width: 2000px;
 }
 
 body {
   background: linear-gradient(129deg, #9cceca, #5f9f54, #59529a, #d76a6a);
   background-size: 800% 800%;
-  animation: AnimationName 17s ease infinite;
-  color: #fff;
+  animation: bgAnime 17s ease infinite;
 }
-@keyframes AnimationName {
+
+@keyframes bgAnime {
   0% {
     background-position: 0% 42%;
   }
@@ -28,10 +30,37 @@ body {
     background-position: 0% 42%;
   }
 }
-nav {
-  max-width: 2000px;
+@keyframes entry-left {
+  from {
+    transform: translate(-116%, -30%) rotate(-45deg);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-
+@keyframes entry-right {
+  from {
+    transform: translate(48%, -27%) rotate(45deg);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes exit-left {
+  to {
+    transform: translate(-70%, -75%) rotate(50deg);
+    opacity: 0;
+  }
+}
+@keyframes exit-right {
+  to {
+    transform: translate(-30%, -75%) rotate(-58deg);
+    opacity: 0;
+  }
+}
+nav,
 main {
   max-width: 2000px;
 }
@@ -40,34 +69,41 @@ nav {
   width: 80%;
   height: 80px;
   padding: 12px 48px;
+  position: fixed;
+  top: 10px;
+  transform: translateX(13%);
   border-radius: 20px;
+  border: 1px solid whitesmoke;
+  background-color: rgba(0, 0, 0, 0.366);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  transition: all 0.3s ease-in;
+  z-index: 99;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0;
   justify-content: space-between;
-  border: 1px solid whitesmoke;
-  background-color: rgba(0, 0, 0, 0.366);
-  -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
-  position: fixed;
-  top: 10px;
-  transform: translateX(10%);
-  transition: all ease-in 0.3s;
 }
 nav .icon {
   width: 40px;
   height: 40px;
   fill: #fff;
+  scale: 1;
+  transition: all 0.2s ease-out;
+}
+nav .icon:hover {
+  scale: 0.8;
 }
 nav .nav-center {
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 15px;
 }
 nav .nav-center h1 {
-  font-size: clamp(1.5rem, 1vw + 1px, 2.5rem);
+  font-size: clamp(2rem, 1vw + 1px, 3rem);
 }
 nav .btns {
   display: flex;
@@ -76,8 +112,6 @@ nav .btns {
   gap: 20px;
 }
 nav .btns button {
-  width: -moz-fit-content;
-  width: fit-content;
   border: none;
   outline: none;
   border-radius: 10px;
@@ -85,20 +119,35 @@ nav .btns button {
   font-size: 1rem;
   font-weight: bold;
   color: whitesmoke;
+  transition: all 0.25s ease-in;
 }
-nav .btns button:first-child {
+nav .btns button.orange {
+  background-color: transparent;
+  color: orange;
+  border: 2px solid orange;
+}
+nav .btns button.orange:hover {
   background-color: orange;
+  color: white;
 }
-nav .btns button:last-child {
+nav .btns button.blue {
   background-color: skyblue;
+  color: white;
+  border: 2px solid transparent;
+}
+nav .btns button.blue:hover {
+  background-color: rgb(3, 129, 178);
+  border: 2px solid whitesmoke;
 }
 
 main {
+  min-height: 100vh;
   width: 100%;
   height: calc(100vh - 1px);
   position: relative;
+  overflow: hidden;
 }
-main .main-heading {
+main .image-stack {
   width: 100%;
   height: 100%;
   display: flex;
@@ -106,32 +155,114 @@ main .main-heading {
   justify-content: center;
   gap: 0;
 }
-main .main-heading h1 {
+main .image-stack .headings h1 {
   font-size: clamp(3rem, 7vw + 1rem, 10rem);
   text-transform: uppercase;
   text-align: center;
 }
+main .image-stack .headings h1.text {
+  font-family: cursive;
+  font-size: clamp(1rem, 3vw + 0.5rem, 4rem);
+  position: absolute;
+  z-index: 99;
+  transform: translate(-50%, -50%);
+  left: 51%;
+  top: 73%;
+  white-space: nowrap;
+  background-color: cadetblue;
+}
+main .image-stack img {
+  width: 300px;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px;
+  opacity: 0;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(0);
+}
+main .image-stack img:nth-child(6) {
+  animation: entry-left 1s ease-in 5s forwards;
+}
+main .image-stack img:nth-child(5) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-5deg);
+  animation: entry-right 1s ease-in 4s forwards;
+}
+main .image-stack img:nth-child(4) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-10deg);
+  animation: entry-left 1s ease-in 3s forwards;
+}
+main .image-stack img:nth-child(3) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-15deg);
+  animation: entry-right 1s ease-in 2s forwards;
+}
+main .image-stack img:nth-child(2) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-20deg);
+  animation: entry-left 1s ease-in 1s forwards;
+}
+main .image-stack img.exit-left {
+  opacity: 1;
+  animation: exit-left 0.8s ease-out forwards;
+}
+main .image-stack img.exit-right {
+  opacity: 1;
+  animation: exit-right 0.8s ease-out forwards;
+}
 
-@media (max-width: 640px) {
+@media (max-width: 740px) {
   nav {
     top: 0;
     left: 0;
     width: 100%;
     padding: 10px;
-    border: none;
     border-radius: 0;
+    border: none;
     border-bottom: 1px solid whitesmoke;
     transform: translateX(0);
+    height: auto;
   }
   nav .nav-center {
     flex: 1;
     margin: 0 20px;
+  }
+  nav .nav-center h1 {
+    font-size: 1.5rem;
+    white-space: nowrap;
   }
   nav .btns {
     flex-direction: column;
     gap: 5px;
   }
   nav .btns button:last-child {
-    display: none;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    width: 100%;
+  }
+  main .image-stack img {
+    width: 200px;
+    height: 280px;
+  }
+  main .image-stack .headings h1 {
+    font-size: clamp(2rem, 10vw, 4rem);
+  }
+  main .image-stack .headings h1.text {
+    top: 78%;
+    font-size: 1rem;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -21,12 +21,13 @@ body {
   height: 300px;
   border: 1px solid grey;
   border-radius: 10px;
-  background-color: #e3e3;
+  background-color: rgba(64, 196, 198, 0.775);
   padding: 15px;
 }
 
 #input-box {
   margin-bottom: 10px;
+  color: #222;
 }
 
 #addBtn {
@@ -56,4 +57,5 @@ ul {
   flex-direction: column;
   gap: 2px;
   column-gap: 5px;
+  color: white;
 }
